@@ -94,8 +94,20 @@ return sum / movies.length;
  *  countByRating(movies);
  *  //> { G: 3, PG: 7 }
  */
-function countByRating(ratings) {}
-
+function countByRating(movies) {
+  let ratedMovies = {};
+  if(movies.length === 0) {
+    return ratedMovies;
+  }
+for( const movie of movies){
+  if(movie ['rated']in ratedMovies){
+    ratedMovies[movie['rated']]++;
+  }else{
+    ratedMovies[movie['rated']]=1;
+  }
+}
+return ratedMovies;
+}
 /**
  * findById()
  * -----------------------------
