@@ -72,7 +72,16 @@ return Number(topScore);
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating() {}
+function getAverageIMDBRating(movies) {
+if (!movies.length){
+  return 0;
+}
+let sum = 0;
+for (let movie of movies){
+  sum += Number(movie.imdbRating);
+}
+return sum / movies.length;
+}
 
 /**
  * countByRating()
