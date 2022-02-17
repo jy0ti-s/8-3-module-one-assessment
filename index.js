@@ -48,8 +48,17 @@ return movieTitles
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore(score) {
-  
+function getHighestMetascore(movies) {
+  let topScore = 0;
+  if (!movies.length){
+    return topScore;
+  }
+  for(let movie of movies){
+    if(movie.metascore > topScore){
+      topScore = movie.metascore;
+    }
+  }
+return Number(topScore);
 }
 
 /**
